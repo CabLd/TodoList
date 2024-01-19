@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "legokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/octree/legokit",
+      "state" : {
+        "revision" : "53a60d72afa4233add8a715f184016ab87b8f062",
+        "version" : "1.4.4"
+      }
+    }
+  ],
+  "version" : 2
+}
