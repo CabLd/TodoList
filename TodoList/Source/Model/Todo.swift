@@ -3,11 +3,12 @@ import Foundation
 public struct Todo: Codable, Identifiable {
     /// The identfier
     public var id: UUID
+    /// The title of todo
     public var title: String
+    /// The createdAt of todo
     public var createdAt: Date
+    /// The finishedAt of todo
     public var finishedAt: Date?
-
-
     /// Create a todo
     /// - Parameters:
     ///   - id: The identifier of the todo.
