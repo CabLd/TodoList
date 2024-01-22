@@ -10,6 +10,7 @@
 		2C45A2AC2B5A5D01001CC80B /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */; };
 		2C45A2AF2B5A720E001CC80B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45A2AE2B5A720E001CC80B /* SnapKit */; };
 		2C45A2B12B5A720E001CC80B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45A2B02B5A720E001CC80B /* SnapKit-Dynamic */; };
+		2C45A2B72B5D6B4B001CC80B /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45A2B62B5D6B4B001CC80B /* TodoCell.swift */; };
 		2CBB46CD2B5923040093BDF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46CC2B5923040093BDF1 /* AppDelegate.swift */; };
 		2CBB46CF2B5923040093BDF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46CE2B5923040093BDF1 /* SceneDelegate.swift */; };
 		2CBB46D12B5923040093BDF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46D02B5923040093BDF1 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		2C45A2B62B5D6B4B001CC80B /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		2CBB46C92B5923040093BDF1 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB46CC2B5923040093BDF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CBB46CE2B5923040093BDF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				2CBB46E92B5923A50093BDF1 /* Todo.swift */,
 				2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */,
+				2C45A2B62B5D6B4B001CC80B /* TodoCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			files = (
 				2CBB46D12B5923040093BDF1 /* ViewController.swift in Sources */,
 				2CBB46CD2B5923040093BDF1 /* AppDelegate.swift in Sources */,
+				2C45A2B72B5D6B4B001CC80B /* TodoCell.swift in Sources */,
 				2CBB46CF2B5923040093BDF1 /* SceneDelegate.swift in Sources */,
 				2CBB46EA2B5923A50093BDF1 /* Todo.swift in Sources */,
 				2C45A2AC2B5A5D01001CC80B /* Checkbox.swift in Sources */,

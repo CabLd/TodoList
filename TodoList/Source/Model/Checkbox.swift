@@ -17,7 +17,6 @@ class Checkbox: UIControl {
             imageView.image = image
         }
     }
-
     /// Description: pickup image by checked
     private var image: UIImage {
         checked ? UIImage(named: "Checked")! : UIImage(named: "Unchecked")!
