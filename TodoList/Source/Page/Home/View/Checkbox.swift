@@ -28,7 +28,6 @@ class Checkbox: UIControl {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()

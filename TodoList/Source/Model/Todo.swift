@@ -20,3 +20,10 @@ public struct Todo: Codable, Identifiable {
         self.createdAt = createdAt
     }
 }
+
+// MARK: - extend a dummy
+extension Todo {
+    static var dummy: Todo {
+        .init(title: "Hello World")
+    }
+}

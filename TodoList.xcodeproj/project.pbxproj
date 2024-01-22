@@ -11,10 +11,11 @@
 		2C45A2AF2B5A720E001CC80B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45A2AE2B5A720E001CC80B /* SnapKit */; };
 		2C45A2B12B5A720E001CC80B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45A2B02B5A720E001CC80B /* SnapKit-Dynamic */; };
 		2C45A2B72B5D6B4B001CC80B /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45A2B62B5D6B4B001CC80B /* TodoCell.swift */; };
+		2CA6FBE42B5E696600721838 /* BigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6FBE32B5E696600721838 /* BigTitle.swift */; };
+		2CA6FBE62B5E70C500721838 /* Tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6FBE52B5E70C500721838 /* Tmp.swift */; };
 		2CBB46CD2B5923040093BDF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46CC2B5923040093BDF1 /* AppDelegate.swift */; };
 		2CBB46CF2B5923040093BDF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46CE2B5923040093BDF1 /* SceneDelegate.swift */; };
 		2CBB46D12B5923040093BDF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46D02B5923040093BDF1 /* ViewController.swift */; };
-		2CBB46D42B5923040093BDF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB46D22B5923040093BDF1 /* Main.storyboard */; };
 		2CBB46D62B5923060093BDF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB46D52B5923060093BDF1 /* Assets.xcassets */; };
 		2CBB46D92B5923060093BDF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB46D72B5923060093BDF1 /* LaunchScreen.storyboard */; };
 		2CBB46E22B5923320093BDF1 /* LegoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CBB46E12B5923320093BDF1 /* LegoKit */; };
@@ -24,11 +25,12 @@
 /* Begin PBXFileReference section */
 		2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		2C45A2B62B5D6B4B001CC80B /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		2CA6FBE32B5E696600721838 /* BigTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTitle.swift; sourceTree = "<group>"; };
+		2CA6FBE52B5E70C500721838 /* Tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tmp.swift; sourceTree = "<group>"; };
 		2CBB46C92B5923040093BDF1 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB46CC2B5923040093BDF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CBB46CE2B5923040093BDF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2CBB46D02B5923040093BDF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CBB46D32B5923040093BDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CBB46D52B5923060093BDF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CBB46D82B5923060093BDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CBB46DA2B5923060093BDF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C45A2B82B5E3835001CC80B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */,
+				2C45A2B62B5D6B4B001CC80B /* TodoCell.swift */,
+				2CA6FBE32B5E696600721838 /* BigTitle.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2CBB46C02B5923040093BDF1 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +90,6 @@
 		2CBB46E32B59234B0093BDF1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				2CBB46D22B5923040093BDF1 /* Main.storyboard */,
 				2CBB46D52B5923060093BDF1 /* Assets.xcassets */,
 				2CBB46D72B5923060093BDF1 /* LaunchScreen.storyboard */,
 			);
@@ -108,8 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBB46E92B5923A50093BDF1 /* Todo.swift */,
-				2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */,
-				2C45A2B62B5D6B4B001CC80B /* TodoCell.swift */,
+				2CA6FBE52B5E70C500721838 /* Tmp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +135,7 @@
 		2CBB46E82B5923950093BDF1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2C45A2B82B5E3835001CC80B /* View */,
 				2CBB46D02B5923040093BDF1 /* ViewController.swift */,
 			);
 			path = Home;
@@ -199,7 +210,6 @@
 			files = (
 				2CBB46D92B5923060093BDF1 /* LaunchScreen.storyboard in Resources */,
 				2CBB46D62B5923060093BDF1 /* Assets.xcassets in Resources */,
-				2CBB46D42B5923040093BDF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,10 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA6FBE42B5E696600721838 /* BigTitle.swift in Sources */,
 				2CBB46D12B5923040093BDF1 /* ViewController.swift in Sources */,
 				2CBB46CD2B5923040093BDF1 /* AppDelegate.swift in Sources */,
 				2C45A2B72B5D6B4B001CC80B /* TodoCell.swift in Sources */,
 				2CBB46CF2B5923040093BDF1 /* SceneDelegate.swift in Sources */,
+				2CA6FBE62B5E70C500721838 /* Tmp.swift in Sources */,
 				2CBB46EA2B5923A50093BDF1 /* Todo.swift in Sources */,
 				2C45A2AC2B5A5D01001CC80B /* Checkbox.swift in Sources */,
 			);
@@ -222,14 +234,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2CBB46D22B5923040093BDF1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CBB46D32B5923040093BDF1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2CBB46D72B5923060093BDF1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -371,7 +375,6 @@
 				INFOPLIST_FILE = TodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -398,7 +401,6 @@
 				INFOPLIST_FILE = TodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
