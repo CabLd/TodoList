@@ -4,7 +4,6 @@
 //
 //  Created by yangtz on 2024/1/22.
 //
-
 import UIKit
 import SnapKit
 import LegoKit
@@ -14,6 +13,7 @@ struct BigTitleItem: TypedItemType {
     var id: UUID { title.id }
     var title: Title
 }
+
 class BigTitle: UICollectionViewCell {
     lazy var bigTitleLabel: UILabel = {
         let label = UILabel()

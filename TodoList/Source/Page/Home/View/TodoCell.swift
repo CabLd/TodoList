@@ -14,22 +14,24 @@ struct TodoItem: TypedItemType {
     typealias CellType = TodoCell
     var id: UUID { todo.id }
     var todo: Todo
+    var onToggle: () -> Void
 }
 
 class TodoCell: UICollectionViewCell {
+    var item: Item?
     lazy var titleLabel: UILabel = {
-        let lable = UILabel()
-        lable.textColor = UIColor.black
-        lable.backgroundColor = UIColor.blue
-        lable.font = UIFont.systemFont(ofSize: 16)
-        lable.numberOfLines = 2
-        lable.textAlignment = .left
-        return lable
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.backgroundColor = UIColor.blue
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 2
+        label.textAlignment = .left
+        return label
     }()
 
     lazy var checkControl: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.checkControl.isSelected.toggle()
+            self?.item?.onToggle()
         }
         let button = UIButton(type: .custom, primaryAction: action)
         button.setImage(UIImage(named: "Unchecked"), for: .normal)
@@ -66,6 +68,8 @@ class TodoCell: UICollectionViewCell {
 // MARK: - TypedCellType
 extension TodoCell: TypedCellType {
     func update(with item: TodoItem) {
+        self.item = item
         titleLabel.text = item.todo.title
+        checkControl.isSelected = item.todo.isCompleted
     }
 }

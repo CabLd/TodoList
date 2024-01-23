@@ -21,7 +21,6 @@ class Checkbox: UIControl {
     private var image: UIImage {
         checked ? UIImage(named: "Checked")! : UIImage(named: "Unchecked")!
     }
-
     /// Description: imageView
     lazy var imageView: UIImageView = {
         let imageView = UIImageView(image: image)
@@ -41,10 +40,8 @@ class Checkbox: UIControl {
         backgroundColor = UIColor.clear
         addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
     }
-
     @objc func touchUpInside() {
         checked = !checked
         sendActions(for: .valueChanged)
     }
-
 }

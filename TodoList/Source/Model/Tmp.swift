@@ -24,8 +24,11 @@ public struct Title: Codable, Identifiable {
 }
 
 extension Title {
-    static var toolP: Title {
-        .init(title: "Incomplete")
+    static var Completed: Title {
+        .init(title: "Completed")
+    }
+    static var InCompleted: Title {
+        .init(title: "InCompleted")
     }
 }
 

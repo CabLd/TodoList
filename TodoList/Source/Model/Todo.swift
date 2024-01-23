@@ -9,6 +9,7 @@ public struct Todo: Codable, Identifiable {
     public var createdAt: Date
     /// The finishedAt of todo
     public var finishedAt: Date?
+    public var isCompleted: Bool { finishedAt != nil }
     /// Create a todo
     /// - Parameters:
     ///   - id: The identifier of the todo.
