@@ -4,21 +4,33 @@ import UIKit
 
 
 /// Description: Data protocol between HomeVc and ModifyVc
-protocol ReceiveData {
-    func pass(data: String, id: UUID)
+protocol ReceiveModifyItemData {
+    func passModify(data: String, id: UUID)
 }
 
-class HomeViewController: UIViewController, LegoContainer, ReceiveData {
-    
-    func pass(data: String, id: UUID) {
-        print("hello,this is vc2，data: \(data) id: \(id)");
+/// Description: Data protocol between HomeVc and CreateVc
+protocol ReceiveCreateItemData {
+    func passCreate(title: String)
+}
+
+class HomeViewController: UIViewController, LegoContainer, ReceiveModifyItemData, ReceiveCreateItemData {
+
+    func passCreate(title: String) {
+        vm.createNewTodo(title: title)
+    }
+
+    func passModify(data: String, id: UUID) {
+        print("hello,this is mainVc，data: \(data) id: \(id)");
         vm.ModifyTodo(id: id, Message: data)
     }
-    
+
     // MARK: - Properties
-    lazy var AddButton: UIButton = {
+    lazy var addButton: UIButton = {
         let action = UIAction { [weak self] _ in
-            self?.vm.createNewTodo(title: "Hello world")
+            let vc = CreateItemViewController()
+            vc.delegate = self
+            self?.present(vc, animated: true, completion: nil)
+
         }
         let button = UIButton(type: .custom, primaryAction: action)
         // button.backgroundColor = UIColor.green
@@ -69,15 +81,14 @@ class HomeViewController: UIViewController, LegoContainer, ReceiveData {
 }
 
 // MARK: - Configure Views
-
 private extension HomeViewController {
     func configureHierarchy() {
         legoRenderer.render(in: view) {
             $0.backgroundColor = .systemBackground
             $0.delegate = self
         }
-        view.addSubview(AddButton)
-        AddButton.snp.makeConstraints { make in
+        view.addSubview(addButton)
+        addButton.snp.makeConstraints { make in
             make.width.height.equalTo(56)
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16)
@@ -85,9 +96,10 @@ private extension HomeViewController {
     }
 }
 
+// MARK: - Set UICollectionView Layout
 private extension HomeViewController {
     func todoLayout() -> NSCollectionLayoutSection {
-        // item的size等于group就好
+        // let item.size = group.size
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(20)
@@ -99,7 +111,6 @@ private extension HomeViewController {
         )
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        // section内部组之间的距离
         section.interGroupSpacing = 16
         section.contentInsets.top = 32
         return section
@@ -107,16 +118,21 @@ private extension HomeViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
+
+    /// Description: Implement clicking on TodoItem to pop up the modification view
+    /// - Parameters:
+    ///   - collectionView: collectionView description
+    ///   - indexPath: indexPath description
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = legoRenderer[indexPath, as: TodoItem.self] else {
             return
         }
-//        let vc = ModifyItemViewController { [weak self] todo in
+//       let vc = ModifyItemViewController { [weak self] todo in
 //            
-//        }
+//       }
         let vc = ModifyItemViewController()
         vc.delegate = self
-        print("send id: \(item.id)")
+        // print("send id: \(item.id)")
         vc.id = item.id
         self.present(vc, animated: true, completion: nil)
     }

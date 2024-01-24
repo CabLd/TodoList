@@ -1,5 +1,5 @@
 //
-//  ModifyItemViewController.swift
+//  CreateItemViewController.swift
 //  TodoList
 //
 //  Created by yangtz on 2024/1/24.
@@ -8,14 +8,11 @@
 import UIKit
 import SnapKit
 
-class ModifyItemViewController: UIViewController {
+class CreateItemViewController: UIViewController {
+    
+    var delegate: ReceiveCreateItemData?
 
-    var delegate: ReceiveModifyItemData?
-    var id: UUID?
-    // public var todo: Todo?
-    // public var onSave: (Todo) -> Void
-
-    lazy var textField: UITextField	 = {
+    lazy var textField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = UIColor.purple
         return textField
@@ -24,7 +21,7 @@ class ModifyItemViewController: UIViewController {
     lazy var storageButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "square.and.arrow.down"), for: .normal)
-        button.addTarget(self, action: #selector(onSave), for: .touchUpInside)
+        button.addTarget(self, action: #selector(onCreate), for: .touchUpInside)
         return button
     }()
 
@@ -51,11 +48,15 @@ class ModifyItemViewController: UIViewController {
 
     }
 
-    @objc func onSave() {
+    @objc func onCreate() {
         //onSave(Todo(title: ""))
         //dismiss(animated: true)
         self.dismiss(animated: true) {
-            self.delegate?.passModify(data: self.textField.text ?? "", id: self.id!)
+            self.delegate?.passCreate(title: self.textField.text ?? "")
+            //self
+            //self.delegate?.pass(data: self.textField.text ?? "", id: self.id!)
         }
     }
+
+
 }
