@@ -2,9 +2,20 @@ import LegoKit
 import SnapKit
 import UIKit
 
-class HomeViewController: UIViewController, LegoContainer {
-    // MARK: - Properties
 
+/// Description: Data protocol between HomeVc and ModifyVc
+protocol ReceiveData {
+    func pass(data: String, id: UUID)
+}
+
+class HomeViewController: UIViewController, LegoContainer, ReceiveData {
+    
+    func pass(data: String, id: UUID) {
+        print("hello,this is vc2，data: \(data) id: \(id)");
+        vm.ModifyTodo(id: id, Message: data)
+    }
+    
+    // MARK: - Properties
     lazy var AddButton: UIButton = {
         let action = UIAction { [weak self] _ in
             self?.vm.createNewTodo(title: "Hello world")
@@ -63,6 +74,7 @@ private extension HomeViewController {
     func configureHierarchy() {
         legoRenderer.render(in: view) {
             $0.backgroundColor = .systemBackground
+            $0.delegate = self
         }
         view.addSubview(AddButton)
         AddButton.snp.makeConstraints { make in
@@ -91,5 +103,21 @@ private extension HomeViewController {
         section.interGroupSpacing = 16
         section.contentInsets.top = 32
         return section
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = legoRenderer[indexPath, as: TodoItem.self] else {
+            return
+        }
+//        let vc = ModifyItemViewController { [weak self] todo in
+//            
+//        }
+        let vc = ModifyItemViewController()
+        vc.delegate = self
+        print("send id: \(item.id)")
+        vc.id = item.id
+        self.present(vc, animated: true, completion: nil)
     }
 }

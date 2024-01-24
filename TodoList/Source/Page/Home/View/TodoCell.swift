@@ -19,6 +19,7 @@ struct TodoItem: TypedItemType {
 
 class TodoCell: UICollectionViewCell {
     var item: Item?
+
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.black
@@ -55,7 +56,6 @@ class TodoCell: UICollectionViewCell {
             // 上下
             make.centerY.equalToSuperview()
         }
-
         contentView.backgroundColor = UIColor.orange
     }
 
@@ -68,8 +68,11 @@ class TodoCell: UICollectionViewCell {
 // MARK: - TypedCellType
 extension TodoCell: TypedCellType {
     func update(with item: TodoItem) {
+        print("更新TodoCell")
         self.item = item
         titleLabel.text = item.todo.title
         checkControl.isSelected = item.todo.isCompleted
     }
 }
+
+

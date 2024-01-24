@@ -10,9 +10,10 @@
 		2C45A2AC2B5A5D01001CC80B /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */; };
 		2C45A2AF2B5A720E001CC80B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45A2AE2B5A720E001CC80B /* SnapKit */; };
 		2C45A2B12B5A720E001CC80B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2C45A2B02B5A720E001CC80B /* SnapKit-Dynamic */; };
+		2CA129B52B60E583008895A1 /* ModifyItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA129B42B60E583008895A1 /* ModifyItemViewController.swift */; };
 		2CA6FBE42B5E696600721838 /* BigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6FBE32B5E696600721838 /* BigTitle.swift */; };
 		2CA6FBE62B5E70C500721838 /* Tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6FBE52B5E70C500721838 /* Tmp.swift */; };
-		2CA6FBE92B5F8E1400721838 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6FBE82B5F8E1400721838 /* ListViewModel.swift */; };
+		2CA6FBE92B5F8E1400721838 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6FBE82B5F8E1400721838 /* HomeViewModel.swift */; };
 		2CA6FBED2B5F9A7C00721838 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6FBEC2B5F9A7C00721838 /* TodoCell.swift */; };
 		2CBB46CD2B5923040093BDF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46CC2B5923040093BDF1 /* AppDelegate.swift */; };
 		2CBB46CF2B5923040093BDF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB46CE2B5923040093BDF1 /* SceneDelegate.swift */; };
@@ -25,9 +26,10 @@
 
 /* Begin PBXFileReference section */
 		2C45A2AB2B5A5D01001CC80B /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		2CA129B42B60E583008895A1 /* ModifyItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyItemViewController.swift; sourceTree = "<group>"; };
 		2CA6FBE32B5E696600721838 /* BigTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTitle.swift; sourceTree = "<group>"; };
 		2CA6FBE52B5E70C500721838 /* Tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tmp.swift; sourceTree = "<group>"; };
-		2CA6FBE82B5F8E1400721838 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		2CA6FBE82B5F8E1400721838 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2CA6FBEC2B5F9A7C00721838 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		2CBB46C92B5923040093BDF1 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBB46CC2B5923040093BDF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		2CA6FBE72B5F516000721838 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2CA6FBE82B5F8E1400721838 /* ListViewModel.swift */,
+				2CA6FBE82B5F8E1400721838 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,6 +150,7 @@
 				2C45A2B82B5E3835001CC80B /* View */,
 				2CA6FBE72B5F516000721838 /* ViewModel */,
 				2CBB46D02B5923040093BDF1 /* ViewController.swift */,
+				2CA129B42B60E583008895A1 /* ModifyItemViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -232,11 +235,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA6FBE42B5E696600721838 /* BigTitle.swift in Sources */,
+				2CA129B52B60E583008895A1 /* ModifyItemViewController.swift in Sources */,
 				2CBB46D12B5923040093BDF1 /* ViewController.swift in Sources */,
 				2CBB46CD2B5923040093BDF1 /* AppDelegate.swift in Sources */,
 				2CBB46CF2B5923040093BDF1 /* SceneDelegate.swift in Sources */,
 				2CA6FBED2B5F9A7C00721838 /* TodoCell.swift in Sources */,
-				2CA6FBE92B5F8E1400721838 /* ListViewModel.swift in Sources */,
+				2CA6FBE92B5F8E1400721838 /* HomeViewModel.swift in Sources */,
 				2CA6FBE62B5E70C500721838 /* Tmp.swift in Sources */,
 				2CBB46EA2B5923A50093BDF1 /* Todo.swift in Sources */,
 				2C45A2AC2B5A5D01001CC80B /* Checkbox.swift in Sources */,
