@@ -19,8 +19,11 @@ class BigTitle: UICollectionViewCell {
         let label = UILabel()
         label.textColor = UIColor.black
         label.backgroundColor = UIColor.white
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.init(name: "Bold", size: 18)
         label.numberOfLines = 1
+        label.font = UIFont.boldSystemFont(ofSize: 18)//加粗方法
+        let myColor = UIColor(red: 57/255, green: 57/255, blue: 67/255, alpha: 1)
+        label.textColor = myColor
         label.textAlignment = .left
         return label
     }()
@@ -29,7 +32,7 @@ class BigTitle: UICollectionViewCell {
         super.init(frame: frame)
         contentView.addSubview(bigTitleLabel)
         bigTitleLabel.snp.makeConstraints { make in
-            make.width.equalTo(99)
+            make.width.equalTo(120)
             make.height.equalTo(18)
             make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(0)

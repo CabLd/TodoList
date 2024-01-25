@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, LegoContainer, ReceiveModifyItemData
 
     // MARK: - Properties
     lazy var addButton: UIButton = {
+        // learn... weak self
         let action = UIAction { [weak self] _ in
             let vc = CreateItemViewController()
             vc.delegate = self
@@ -74,10 +75,17 @@ class HomeViewController: UIViewController, LegoContainer, ReceiveModifyItemData
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Date())
         view.backgroundColor = .systemBackground
         title = "Home"
+        self.centerTitle()
         configureHierarchy()
     }
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        self.centerTitle()
+//    }
 }
 
 // MARK: - Configure Views
@@ -89,7 +97,7 @@ private extension HomeViewController {
         }
         view.addSubview(addButton)
         addButton.snp.makeConstraints { make in
-            make.width.height.equalTo(56)
+            make.width.height.equalTo(70)
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16)
         }
@@ -135,5 +143,31 @@ extension HomeViewController: UICollectionViewDelegate {
         // print("send id: \(item.id)")
         vc.id = item.id
         self.present(vc, animated: true, completion: nil)
+    }
+}
+
+
+extension HomeViewController {
+    func CustomTitle() -> AttributedString {
+        var str = AttributedString("Home")
+        str.font = .boldSystemFont(ofSize: 18)
+        let myColor = UIColor(red: 57/255, green: 57/255, blue: 67/255, alpha: 1)
+        str.backgroundColor = myColor
+        return str
+    }
+}
+
+
+extension UIViewController {
+    func centerTitle() {
+        for navItem in (self.navigationController?.navigationBar.subviews)! {
+            for itemSubView in navItem.subviews {
+                if let largeLabel = itemSubView as? UILabel {
+                    largeLabel.center = CGPoint(x: navItem.bounds.width/2, y: navItem.bounds.height/2
+                     )
+                    return
+                }
+            }
+        }
     }
 }
