@@ -26,9 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
             // NSAttributedString.Key.
         ]
-        // navg.navigation 你。 哦空哦i口i哦i哦i哦i哦i哦i哦i哦i哦借口哦凑图，《 Bar.
+        // navg.navigation
         // navg.navigationBar.largeTitleTextAttributes = attrs
         // 设置NavigationBar的标题格式
+        // UINavigationBar.appearance().backgroundColor = .red
         UINavigationBar.appearance().titleTextAttributes = attrs
         window?.makeKeyAndVisible()
 

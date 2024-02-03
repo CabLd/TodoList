@@ -23,7 +23,7 @@ class TodoCell: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.black
-        label.backgroundColor = UIColor.blue
+        // label.backgroundColor = UIColor.blue
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 2
         label.textAlignment = .left
@@ -56,7 +56,7 @@ class TodoCell: UICollectionViewCell {
             // 上下
             make.centerY.equalToSuperview()
         }
-        contentView.backgroundColor = UIColor.orange
+        // contentView.backgroundColor = UIColor.orange
     }
 
     @available(*, unavailable)

@@ -20,9 +20,13 @@ class HomeViewController: UIViewController, LegoContainer, ReceiveModifyItemData
     }
 
     func passModify(data: String, id: UUID) {
+        print("end")
+        print(data, id)
         print("hello,this is mainVc，data: \(data) id: \(id)");
         vm.ModifyTodo(id: id, Message: data)
     }
+
+    var delegatePassTextViewData: ReceiveSourceTextData?
 
     // MARK: - Properties
     lazy var addButton: UIButton = {
@@ -30,8 +34,11 @@ class HomeViewController: UIViewController, LegoContainer, ReceiveModifyItemData
         let action = UIAction { [weak self] _ in
             let vc = CreateItemViewController()
             vc.delegate = self
-            self?.present(vc, animated: true, completion: nil)
 
+            // modify
+            self?.navigationController?.pushViewController(vc, animated: true)
+
+            // self?.present(vc, animated: false, completion: nil)
         }
         let button = UIButton(type: .custom, primaryAction: action)
         // button.backgroundColor = UIColor.green
@@ -75,17 +82,15 @@ class HomeViewController: UIViewController, LegoContainer, ReceiveModifyItemData
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Date())
         view.backgroundColor = .systemBackground
         title = "Home"
+        // let image = UIImage(named: "back1")!
+        // view.imageView = UIImageView(frame: CGRectZero)
+        // view.imageView?.contentMode = .scaleAspectFill
+        // view.backgroundColor = UIColor(patternImage: image!)
         self.centerTitle()
         configureHierarchy()
     }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        self.centerTitle()
-//    }
 }
 
 // MARK: - Configure Views
@@ -120,13 +125,13 @@ private extension HomeViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 16
+
         section.contentInsets.top = 32
         return section
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-
     /// Description: Implement clicking on TodoItem to pop up the modification view
     /// - Parameters:
     ///   - collectionView: collectionView description
@@ -139,10 +144,14 @@ extension HomeViewController: UICollectionViewDelegate {
 //            
 //       }
         let vc = ModifyItemViewController()
+        // 设置委托
+        delegatePassTextViewData = vc
         vc.delegate = self
-        // print("send id: \(item.id)")
+        // 传递数据
+        self.delegatePassTextViewData?.setTextView(data: item.todo.title)
         vc.id = item.id
-        self.present(vc, animated: true, completion: nil)
+        // 切换页面
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

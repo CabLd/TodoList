@@ -152,8 +152,8 @@
 				2C45A2B82B5E3835001CC80B /* View */,
 				2CA6FBE72B5F516000721838 /* ViewModel */,
 				2CBB46D02B5923040093BDF1 /* ViewController.swift */,
-				2CA129B42B60E583008895A1 /* ModifyItemViewController.swift */,
 				2CA129B62B6103DD008895A1 /* CreateItemViewController.swift */,
+				2CA129B42B60E583008895A1 /* ModifyItemViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
