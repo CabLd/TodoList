@@ -10,9 +10,10 @@ import LegoKit
 import UIKit
 
 class HomeViewModel: LegoObservableObject {
-
+    
+    var myUserDatas = UserDatas()
     /// Description: listPoll  includes completes and incomplete
-    @LegoPublished var todos: [Todo] = []
+    @LegoPublished var todos: [Todo]
 
     var incompleteTodos: [Todo] {
         todos.filter { $0.finishedAt == nil }
@@ -23,11 +24,19 @@ class HomeViewModel: LegoObservableObject {
             .sorted { $0.finishedAt! < $1.finishedAt! }
     }
 
-    init() {}
+    init() {
+        // 加载用户数据
+        // self.todos = []
+        print("init")
+        self.todos = myUserDatas.LoadUserTodos()
+    }
+
 
     func createNewTodo(title: String) {
         print("创建一个新的Todo")
-        todos.append(Todo(title: title))
+        var item = Todo(title: title)
+        todos.append(item)
+        myUserDatas.addNewTodo(todo: item)
     }
 
     func toggleTodo(_ todo: Todo) {
@@ -37,8 +46,10 @@ class HomeViewModel: LegoObservableObject {
         }
         if todos[index].finishedAt == nil {
             todos[index].finishedAt = Date()
+            myUserDatas.updateUserTodos(index: index, todo: todos[index])
         } else {
             todos[index].finishedAt = nil
+            myUserDatas.updateUserTodos(index: index, todo: todos[index])
         }
     }
 

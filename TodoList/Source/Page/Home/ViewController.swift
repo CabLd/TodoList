@@ -96,6 +96,8 @@ class HomeViewController: UIViewController, LegoContainer, ReceiveModifyItemData
 // MARK: - Configure Views
 private extension HomeViewController {
     func configureHierarchy() {
+        // 加载defaults数据
+        
         legoRenderer.render(in: view) {
             $0.backgroundColor = .systemBackground
             $0.delegate = self
@@ -153,6 +155,10 @@ extension HomeViewController: UICollectionViewDelegate {
         // 切换页面
         self.navigationController?.pushViewController(vc, animated: true)
     }
+
+//    func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
+//
+//    }
 }
 
 
@@ -180,3 +186,5 @@ extension UIViewController {
         }
     }
 }
+
+
